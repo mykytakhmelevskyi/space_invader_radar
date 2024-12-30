@@ -11,8 +11,8 @@ RSpec.describe SpaceInvadersRadar::FileReader do
     "--o-----o--\n---o---o---\n--ooooooo--\n-oo-ooo-oo-\nooooooooooo\no-ooooooo-o\no-o-----o-o\n---oo-oo---\n"
   end
 
-  describe '#call' do
-    subject(:result) { described_class.new(*[file_path, custom_marker].compact).call }
+  describe '.read' do
+    subject(:result) { described_class.read(*[file_path, custom_marker].compact) }
 
     let(:file_path) { valid_invader_file_path }
 

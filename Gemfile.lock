@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     space_invaders_radar (0.1.0)
+      optimist (~> 3.2)
 
 GEM
   remote: https://rubygems.org/
@@ -10,6 +11,7 @@ GEM
     diff-lcs (1.5.1)
     json (2.9.1)
     language_server-protocol (3.17.0.3)
+    optimist (3.2.0)
     parallel (1.26.3)
     parser (3.3.6.0)
       ast (~> 2.4.1)
@@ -55,6 +57,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  optimist (~> 3.2)
   rake (~> 13.0)
   rspec (~> 3.0)
   rubocop

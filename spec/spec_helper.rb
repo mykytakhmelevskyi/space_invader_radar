@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'space_invaders_radar/file_reader'
+require 'space_invaders_radar'
 
 # Require support files
 Dir[File.join(__dir__, 'support/**/*.rb')].each { |file| require file }

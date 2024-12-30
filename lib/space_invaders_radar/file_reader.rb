@@ -9,7 +9,11 @@ module SpaceInvadersRadar
 
     attr_reader :file_path, :marker
 
-    def initialize(file_path, marker = DEFAULT_MARKER)
+    def self.read(file_path, marker = DEFAULT_MARKER)
+      new(file_path, marker).call
+    end
+
+    def initialize(file_path, marker)
       @file_path = file_path
       @marker = marker
     end

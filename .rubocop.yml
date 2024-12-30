@@ -14,3 +14,12 @@ Style/StringLiteralsInInterpolation:
 
 RSpec/MultipleMemoizedHelpers:
   Enabled: false
+
+Metrics/MethodLength:
+  Max: 20
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
