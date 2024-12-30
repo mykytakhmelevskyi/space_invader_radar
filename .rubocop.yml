@@ -23,3 +23,9 @@ Style/IfUnlessModifier:
 
 Style/GuardClause:
   Enabled: false
+
+Naming/MethodParameterName:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Max: 8

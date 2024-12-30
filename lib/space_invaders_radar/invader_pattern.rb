@@ -2,13 +2,13 @@
 
 module SpaceInvadersRadar
   # InvaderPattern: Represents the invader pattern
-  class InvaderPattern
-    attr_reader :pattern, :width, :height, :size
+  class InvaderPattern < SpaceInvadersRadar::GridData
+    DEFAULT_PATTERN_CHAR = 'o'
+
+    attr_reader :size
 
     def initialize(string_data)
-      @pattern = string_data.split("\n")
-      @height = pattern.size
-      @width = pattern[0].size
+      super
       @size = height * width
     end
   end
