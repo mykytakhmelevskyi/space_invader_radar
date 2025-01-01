@@ -13,3 +13,7 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'rubocop-rspec', require: false
 end
+
+group :test do
+  gem 'simplecov', require: false
+end

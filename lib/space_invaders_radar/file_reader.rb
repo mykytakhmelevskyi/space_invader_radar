@@ -7,38 +7,37 @@ module SpaceInvadersRadar
   class FileReader
     DEFAULT_MARKER = '~~~'
 
-    attr_reader :file_path, :marker
-
     def self.read(file_path, marker = DEFAULT_MARKER)
       new(file_path, marker).call
     end
 
     def initialize(file_path, marker)
-      @file_path = file_path
+      @content = read_file(file_path)
       @marker = marker
     end
 
     def call
-      content = read_file
-      validate_content(content)
-      strip_markers(content)
+      validate_content
+      strip_markers
     end
 
     private
 
-    def read_file
+    attr_reader :content, :marker
+
+    def read_file(file_path)
       File.read(file_path)
     rescue Errno::ENOENT
       raise FileNotFoundError, "File not found: #{file_path}"
     end
 
-    def validate_content(content)
+    def validate_content
       return if content.start_with?(marker) && content.end_with?(marker)
 
       raise InvalidContentError, "File content must start and end with the marker: #{marker}"
     end
 
-    def strip_markers(content)
+    def strip_markers
       content.lines[1...-1].join
     end
 
