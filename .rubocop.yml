@@ -29,3 +29,9 @@ Naming/MethodParameterName:
 
 Metrics/CyclomaticComplexity:
   Max: 8
+
+RSpec/ExpectChange:
+  EnforcedStyle: block
+
+RSpec/ExampleLength:
+  Max: 10
