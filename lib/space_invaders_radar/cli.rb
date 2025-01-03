@@ -10,6 +10,7 @@ require_relative 'matches_cache_manager'
 require_relative 'matches_collector'
 require_relative 'radar_sample'
 require_relative 'sliding_window'
+require_relative 'output_handler'
 
 module SpaceInvadersRadar
   # CLI: Command-line interface handler
@@ -27,7 +28,11 @@ module SpaceInvadersRadar
         SpaceInvadersRadar::InvaderPattern.new(SpaceInvadersRadar::FileReader.read(file_path))
       end
 
-      'cli run output'
+      results = SpaceInvadersRadar::InvadersDetector.new(
+        radar_sample, invader_patterns, opts[:accuracy], opts[:visibility]
+      ).detect_invaders
+
+      SpaceInvadersRadar::OutputHandler.new(results, radar_sample).display
     end
 
     private

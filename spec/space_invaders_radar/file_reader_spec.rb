@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe SpaceInvadersRadar::FileReader do
-  let(:valid_invader_file_path) { fixture_path('valid_invader.txt') }
+  let(:valid_invader_file_path) { fixture_path('valid_invader_1.txt') }
   let(:invalid_file_path) { fixture_path('invalid_path.txt') }
   let(:no_marker_path) { fixture_path('invalid_invader_no_markers.txt') }
   let(:custom_marker_file_path) { fixture_path('valid_invader_custom_markers.txt') }

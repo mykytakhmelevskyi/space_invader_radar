@@ -14,13 +14,15 @@ module SpaceInvadersRadar
     end
 
     def detect_invaders
+      cache_manager = SpaceInvadersRadar::MatchesCacheManager.new(radar_sample.width, radar_sample.height)
+
       invader_patterns.map do |invader_pattern|
         {
           pattern: invader_pattern,
           matches: SpaceInvadersRadar::MatchesCollector.new(
             SpaceInvadersRadar::SlidingWindow.new(radar_sample, invader_pattern),
             SpaceInvadersRadar::Matcher,
-            SpaceInvadersRadar::MatchesCacheManager.new(radar_sample.width, radar_sample.height),
+            cache_manager,
             accuracy,
             visibility
           ).find_matches

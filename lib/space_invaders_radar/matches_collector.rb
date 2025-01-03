@@ -59,8 +59,8 @@ module SpaceInvadersRadar
 
     def cache_match
       cache_manager.cache_section(
-        sliding_window.start_x,
-        sliding_window.start_y,
+        [sliding_window.start_x, 0].max,
+        [sliding_window.start_y, 0].max,
         sliding_window.invader_pattern_subsection
       )
     end
